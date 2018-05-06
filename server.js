@@ -1,12 +1,12 @@
 const express = require('express'),
-
     http = require('http'),
     socketIo = require('socket.io'),
     app = express();
     server = http.createServer(app),
     io = socketIo(server),
     UserService = require('./UsersService'),
-    userService = new UserService();
+    userService = new UserService(),
+    port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
@@ -40,6 +40,6 @@ socket.on('join', (name)=>{
     });
 });
 });
-server.listen(3000,() => {
-    console.log('listening on *:3000');
+server.listen(port,() => {
+    console.log('listening on *:'+ port);
 });
