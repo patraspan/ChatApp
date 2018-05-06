@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import io from 'socket.io-client';
 import styles from './css/App.css';
-
+// import {hot} from 'react-hot-loader';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 import UsersList from './UsersList';
