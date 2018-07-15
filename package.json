@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "webpack-dev-server --hot --env development",
+    "start-hot": "webpack-dev-server --hot --env development",
+    "start": "nodemon index.js",
     "build": "webpack --env production"
   },
   "repository": {
@@ -18,7 +19,7 @@
     "url": "https://github.com/patraspan/ChatApp/issues"
   },
   "homepage": "https://github.com/patraspan/ChatApp#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",

@@ -1,8 +1,38 @@
 .MessageList {
-    flex: 1;
+    overflow: auto;
+    height: 300px;
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: flex-start;
-    width: 75vw;
     padding: 20px;
-}
+    width: 75vw;
+    box-sizing: border-box;
+  }
+  
+  .Message {
+    line-height: 10px;
+    min-width: 40px;
+    margin: 8px;
+  }
+  
+  .MessageUser {
+    display: block;
+  }
+  
+  .MessageToRight {
+    text-align: right;
+  }
+  
+  .Text {
+    margin: 8px 0;
+    padding: 12px;
+    background-color: rgb(252, 242, 173);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 10px;
+    color: black;
+    display: inline-block;
+    width: fit-content;
+  }

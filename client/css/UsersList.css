@@ -4,13 +4,14 @@
     width: 25vw;
     justify-content: flex-start;
     flex-direction: column;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #0c2461;
 }
 
 .UsersOnline {
     padding: 20px;
     text-align: center;
-    background: #ccc;
+    background: #0c2461;
+    color: #eb2f06;
 }
 
 .UsersList {

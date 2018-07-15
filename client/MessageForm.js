@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+
 import styles from './css/MessageForm.css';
 
 class MessageForm extends Component {
@@ -7,40 +7,32 @@ class MessageForm extends Component {
         super(props);
         this.state = {text: ''}
     }
-    handleSubmit = (e) => {
+    handleSubmit(e) {
         e.preventDefault();
         const message = {
             from: this.props.name,
             text: this.state.text
         };
-        // this.props.onMessageSubmit(message);
-        if (message.text.trim() !== "") {
-            this.props.onMessageSubmit(message);
-          }
+        this.props.onMessageSubmit(message);
         this.setState({text: ''});
     }
-    changeHandler = (e) => {
+    changeHandler(e) {
         this.setState({text: e.target.value});
     }
     render(){
         return (
             <form 
             className={styles.MessageForm}
-            onSubmit={this.handleSubmit} >
+            onSubmit={e => this.handleSubmit(e)} >
             <input 
             type="text"
             className={styles.MessageInput}
-            onChange={this.changeHandler}
+            onChange={e => this.changeHandler(e)}
             value={this.state.text}
             placeholder="message"
             /></form>
         )
     }
 }
-
-MessageForm.propTypes = {
-    name: PropTypes.string,
-    onMessageSubmit: PropTypes.func
-  }.isRequired;
 
 export default MessageForm;
