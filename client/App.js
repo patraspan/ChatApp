@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import io from 'socket.io-client';
 import styles from './css/App.css';
-// import {hot} from 'react-hot-loader';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 import UsersList from './UsersList';
 import UserForm from './UserForm';
+
 const socket = io('/');
 
 class App extends Component {
@@ -56,7 +56,10 @@ class App extends Component {
                 <UsersList users={this.state.users} />
                 <div className={styles.MessageWrapper}>
                     <MessageList messages={this.state.messages} />
-                    <MessageForm onMessageSubmit={message=> this.handleMessageSubmit(message)} name={this.state.name} />
+                    <MessageForm 
+                        onMessageSubmit={message=> this.handleMessageSubmit(message)} 
+                        name={this.state.name} 
+                    />
                 </div>
             </div>
         </div>
