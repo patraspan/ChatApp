@@ -4,7 +4,7 @@ import styles from './css/MessageList.css';
 
 const Message = props => (
 <div className={styles.Message}>
-<strong>{props.from} :</strong>
+<strong>{props.from.name} :</strong>
 <span>{props.text}</span>
 </div>
 )
